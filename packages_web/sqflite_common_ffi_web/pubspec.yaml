@@ -13,9 +13,15 @@ dependencies:
   # sqflite_common_ffi: '>=2.2.0-dev.6 <4.0.0'
   # sqflite_common: '>=2.4.0-dev.5 <4.0.0'
   sqflite_common_ffi:
-   path: ../../sqflite_common_ffi
+    git:
+      url: https://github.com/fachrifaul/sqflite.git
+      path: sqflite_common_ffi
+      ref: v2.0.2-web
   sqflite_common:
-   path: ../../sqflite_common
+    git:
+      url: https://github.com/fachrifaul/sqflite.git
+      path: sqflite_common
+      ref: v2.0.2-web
   sqlite3: '>=1.5.1 <3.0.0'
   http: '>=0.13.4 <2.0.0'
   js: '>=0.6.4 <2.0.0'
