@@ -17,7 +17,7 @@ Map<String, Object?> pathGetJson(String path) {
 
 /// Read package_config.json
 Map<String, Object?> pathGetPackageConfigMap(String packageDir) =>
-    pathGetJson(join('.dart_tool', 'package_config.json'));
+    pathGetJson(join(packageDir, '.dart_tool', 'package_config.json'));
 
 /// Build a file path.
 String _toFilePath(String parent, String path, {bool? windows}) {
@@ -39,7 +39,6 @@ String? pathPackageConfigMapGetPackagePath(
       var name = packageMap['name'];
 
       if (name is String && name == package) {
-        print(name);
         var rootUri = packageMap['rootUri'];
         if (rootUri is String) {
           // rootUri if relative is relative to .dart_tool
@@ -53,4 +52,5 @@ String? pathPackageConfigMapGetPackagePath(
       }
     }
   }
+  return null;
 }
