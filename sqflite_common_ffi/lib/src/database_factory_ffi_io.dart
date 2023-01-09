@@ -18,20 +18,20 @@ DatabaseFactory createDatabaseFactoryFfiImpl(
     {SqfliteFfiInit? ffiInit, bool noIsolate = false, String? tag = 'ffi'}) {
   var noIsolateInitialized = false;
   return buildDatabaseFactory(
-      tag: tag,
+      // tag: tag,
       invokeMethod: (String method, [dynamic arguments]) {
-        final methodCall = FfiMethodCall(method, arguments);
-        if (noIsolate) {
-          if (!noIsolateInitialized) {
-            if (ffiInit != null) {
-              ffiInit();
-            }
-          }
-          return ffiMethodCallHandleNoIsolate(methodCall);
-        } else {
-          return ffiMethodCallhandleInIsolate(methodCall, ffiInit: ffiInit);
+    final methodCall = FfiMethodCall(method, arguments);
+    if (noIsolate) {
+      if (!noIsolateInitialized) {
+        if (ffiInit != null) {
+          ffiInit();
         }
-      });
+      }
+      return ffiMethodCallHandleNoIsolate(methodCall);
+    } else {
+      return ffiMethodCallhandleInIsolate(methodCall, ffiInit: ffiInit);
+    }
+  });
 }
 
 bool _debug = false; // devWarning(true); // false

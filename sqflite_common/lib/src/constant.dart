@@ -2,6 +2,13 @@
 // Native methods to use
 //
 
+const String paramCursorId = 'cursorId';
+const String paramCursorPageSize = 'cursorPageSize';
+const String methodQueryCursorNext = 'queryCursorNext';
+const String paramTransactionId = 'transactionId';
+const int paramTransactionIdValueForce = -1;
+const String paramCursorCancel = 'cancel';
+
 /// Native sql INSERT.
 const String methodInsert = 'insert';
 
